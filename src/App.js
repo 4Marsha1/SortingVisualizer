@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { URL_PREFIX } from './constants';
+import HomeScreen from './containers/Homescreen';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route
+                    exact
+                    path={URL_PREFIX + '/homescreen'}
+                    element={<HomeScreen />}
+                    key='route-homescreen'
+                />
+                <Route
+                    exact
+                    path='/'
+                    element={<Navigate replace to={URL_PREFIX + '/homescreen'} />}
+                />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
