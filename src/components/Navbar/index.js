@@ -7,13 +7,11 @@ const Index = () => {
             <span className={styles['logo']}>Sorting</span>
             <div className={styles['links']}>
                 <span className={styles['link']}>Home</span>
-                <form >
-                    <select className={`${styles['link']} ${styles['dropdown']}`}>
-                        <option >Bubble</option>
-                        <option >Insertion</option>
-                        <option >Selection</option>
-                    </select>
-                </form>
+                <span className={styles['link']}>
+                    <a href="https://github.com/4Marsha1/SortingVisualizer" target="_blank">
+                        Source Code
+                    </a>
+                </span>
                 <input className={styles['searchbar']} type="text" placeholder='Search...' />
                 <button className={styles['search-btn']}>Search</button>
             </div>
